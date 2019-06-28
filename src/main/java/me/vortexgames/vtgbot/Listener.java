@@ -21,7 +21,7 @@ class Listener extends ListenerAdapter {
 
     @Override
     public void onReady(ReadyEvent event) {
-        System.out.print(String.format("Logged in as %#s", event.getJDA().getSelfUser()));
+        System.out.print("Logged in" + "\n\n");
     }
 
     @Override
@@ -39,6 +39,13 @@ class Listener extends ListenerAdapter {
             logger.info(String.format("(%s)[%s]<%#s>: %s", guild.getName(), textChannel.getName(), author, content));
         } else if (event.isFromType(ChannelType.PRIVATE)) {
             logger.info(String.format("[PRIV]<%#s>: %s", author, content));
+        }
+
+        if (event.getMessage().getContentRaw().contains("?" + manager.getCommands())) {
+            if (event.getMember().getUser().getId().equals("265791495519338496")) {
+                event.getChannel().sendMessage("U bent verbannen van de bot, u kunt dus geen commands meer gebruiken van de bot").queue();
+                return;
+            }
         }
     }
 

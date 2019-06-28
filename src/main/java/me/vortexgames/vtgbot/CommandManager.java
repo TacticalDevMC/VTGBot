@@ -1,6 +1,8 @@
 package me.vortexgames.vtgbot;
 
 import me.vortexgames.vtgbot.commands.HelpCommand;
+import me.vortexgames.vtgbot.commands.UptimeCommand;
+import me.vortexgames.vtgbot.commands.moderation.BanCommand;
 import me.vortexgames.vtgbot.commands.music.*;
 import me.vortexgames.vtgbot.objects.ICommand;
 import net.dv8tion.jda.core.events.message.guild.GuildMessageReceivedEvent;
@@ -14,11 +16,6 @@ public class CommandManager {
     private final Map<String, ICommand> commands = new HashMap<>();
 
     CommandManager(Random random) {
-//        addCommand(new WelkomMessage());
-//        addCommand(new AddReaction());
-//        addCommand(new SayCommand());
-//        addCommand(new TicketCommand());
-
         addCommand(new JoinCommand());
         addCommand(new LeaveCommand());
         addCommand(new PlayCommand());
@@ -30,6 +27,9 @@ public class CommandManager {
         addCommand(new PauzeCommand());
         addCommand(new ResumeCommand());
         addCommand(new HelpCommand(this));
+        addCommand(new UptimeCommand());
+        addCommand(new BanCommand());
+//        addCommand(new BanJasper());
 //        addCommand(new AFKCommand());
     }
 
