@@ -37,9 +37,9 @@ public class Main {
                     .addEventListener(listener)
                     .addEventListener(new WelkomMessage())
                     .addEventListener(new AddReaction())
-                    .build().awaitReady();
+                    .build();
             logger.info("Running");
-        } catch (LoginException | InterruptedException e) {
+        } catch (LoginException e) {
             e.printStackTrace();
         }
     }
