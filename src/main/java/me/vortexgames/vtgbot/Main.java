@@ -20,8 +20,6 @@ public class Main {
 
     private static JDA jda;
 
-    // LINK: https://discordapp.com/oauth2/authorize?client_id=593076297715154954&scope=bot&permissions=2146958847
-
     private static final Random random = new Random();
 
     private Main() {
